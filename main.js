@@ -10,14 +10,21 @@ function showTime() {
   }
   if (h > 12) {
     h = h - 12;
-    settion = "PM"
+    settion = "PM";
   }
-  
-  h = h < 10 ? `0${h}` : h
-  m = m < 10 ? `0${m}` : m
-  s = s < 10 ? `0${s}` : s
 
-  let display = document.querySelector(".clock")
-  display.innerText = `${h}:${m}:${s} ${settion}`
+  h = h < 10 ? `0${h}` : h;
+  m = m < 10 ? `0${m}` : m;
+  s = s < 10 ? `0${s}` : s;
+
+  let display = document.querySelector(".clock");
+  display.innerText = `${h}:${m}:${s} ${settion}`;
 }
 setInterval(showTime, 1000);
+
+let btn = document.getElementById("bg-img");
+btn.addEventListener("click", change);
+function change() {
+  let body = document.querySelector("body");
+  body.classList.toggle("back-img");
+}
